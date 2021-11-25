@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.89.4" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>LeetCode刷题——两数之和 | 阿飒的仓库</title>
+
+    <link rel="stylesheet" href="/css/meme.min.434b1c397424e7f0c41d6c20e1250165181444a7704010535c3bb7381d976a0d.css"/>
+
+    
+    
+        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="arthur" /><meta name="description" content="……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="阿飒的仓库" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="阿飒的仓库" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-11-25T19:20:03+08:00",
+        "dateModified": "2021-11-25T19:20:44+08:00",
+        "url": "https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/",
+        "headline": "LeetCode刷题——两数之和",
+        "description": "……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "technology",
+        "wordCount":  681 ,
+        "image": "https://Arthur940621.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "我是我之所有因果的指向",
+            "email": "18609106346@163.com",
+            "image": "https://Arthur940621.github.io/icons/apple-touch-icon.png",
+            "url": "https://arthur940621.github.io/",
+            "name": "arthur"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "阿飒的仓库",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://Arthur940621.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://Arthur940621.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://Arthur940621.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+
+    
+
+
+
+<meta property="og:title" content="LeetCode刷题——两数之和" />
+<meta property="og:description" content="……" />
+<meta property="og:url" content="https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" />
+<meta property="og:site_name" content="阿飒的仓库" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://Arthur940621.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-11-25T19:20:03&#43;08:00" />
+    <meta property="article:modified_time" content="2021-11-25T19:20:44&#43;08:00" />
+    
+    <meta property="article:section" content="technology" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">阿飒的仓库</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/technology/"><svg t="1637754536610" class="icon technology" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2796" width="200" height="200"><path d="M204.8 860.842667h568.832" fill="#FFFFFF" p-id="2797"></path><path d="M136.533333 217.429333h705.365334a34.133333 34.133333 0 0 1 34.133333 34.133334v432.469333A22.698667 22.698667 0 0 1 853.333333 706.730667H125.098667A22.698667 22.698667 0 0 1 102.4 684.032V251.562667a34.133333 34.133333 0 0 1 34.133333-34.133334z" fill="#FCFEFF" p-id="2798"></path><path d="M876.032 251.562667v432.298666A22.698667 22.698667 0 0 1 853.333333 706.730667H474.453333l178.176-489.301334h189.269334a34.133333 34.133333 0 0 1 34.133333 34.133334z" fill="#EDF4FF" p-id="2799"></path><path d="M716.8 860.842667H261.632a57.002667 57.002667 0 0 1 57.002667-56.832h341.333333A56.832 56.832 0 0 1 716.8 860.842667z" fill="#FFFFFF" p-id="2800"></path><path d="M598.528 706.730667h-218.453333l-27.306667 97.28h273.066667l-27.306667-97.28z" fill="#C3CFDE" p-id="2801"></path><path d="M876.032 251.562667v68.266666H102.4v-68.266666a34.133333 34.133333 0 0 1 34.133333-34.133334h705.365334a34.133333 34.133333 0 0 1 34.133333 34.133334z" fill="#96DDFF" p-id="2802"></path><path d="M841.898667 217.429333H652.629333l-37.205333 102.4h260.608v-68.266666a34.133333 34.133333 0 0 0-34.133333-34.133334z" fill="#69BAF9" p-id="2803"></path><path d="M716.8 860.842667H261.632a57.002667 57.002667 0 0 1 57.002667-56.832h341.333333A56.832 56.832 0 0 1 716.8 860.842667z" fill="#EDF4FF" p-id="2804"></path><path d="M782.165333 903.168a158.549333 158.549333 0 0 0 25.6-2.048 21.845333 21.845333 0 0 1 22.698667 10.581333 22.016 22.016 0 0 0 30.208 8.021334l36.010667-20.821334a22.186667 22.186667 0 0 0 7.850666-30.037333 22.186667 22.186667 0 0 1 2.048-25.088 160.256 160.256 0 0 0 25.6-44.544 22.016 22.016 0 0 1 21.162667-14.165333 22.186667 22.186667 0 0 0 22.186667-22.186667v-41.642667a22.186667 22.186667 0 0 0-22.186667-22.186666 22.016 22.016 0 0 1-20.650667-14.336 162.645333 162.645333 0 0 0-25.6-44.544 21.845333 21.845333 0 0 1-2.56-24.917334 22.357333 22.357333 0 0 0-8.192-30.378666l-36.010666-20.821334a22.016 22.016 0 0 0-30.208 8.192 22.016 22.016 0 0 1-22.698667 10.752 148.821333 148.821333 0 0 0-51.2 0 22.016 22.016 0 0 1-22.357333-10.752 22.186667 22.186667 0 0 0-30.208-8.192l-36.010667 20.821334a22.357333 22.357333 0 0 0-8.192 30.378666 21.845333 21.845333 0 0 1-2.048 24.917334A162.645333 162.645333 0 0 0 631.466667 684.714667a22.016 22.016 0 0 1-20.48 15.018666 22.186667 22.186667 0 0 0-22.186667 22.186667v40.96a22.186667 22.186667 0 0 0 22.186667 22.186667 22.016 22.016 0 0 1 20.650666 14.165333 160.256 160.256 0 0 0 25.6 44.544 22.186667 22.186667 0 0 1 2.048 25.088 22.186667 22.186667 0 0 0 8.192 30.208l36.010667 20.821333a22.016 22.016 0 0 0 30.378667-8.021333 21.845333 21.845333 0 0 1 22.698666-10.581333 158.549333 158.549333 0 0 0 25.6 1.877333z" fill="#79DEB4" p-id="2805"></path><path d="M975.530667 721.066667v41.642666a22.186667 22.186667 0 0 1-22.186667 22.186667 22.186667 22.186667 0 0 0-20.650667 14.336 162.645333 162.645333 0 0 1-25.6 44.544 22.528 22.528 0 0 0-4.949333 13.994667 20.992 20.992 0 0 0 2.901333 10.922666 22.357333 22.357333 0 0 1-8.192 30.378667l-36.010666 20.821333a22.016 22.016 0 0 1-30.208-8.192 22.016 22.016 0 0 0-22.698667-10.752 148.821333 148.821333 0 0 1-51.2 0 22.016 22.016 0 0 0-22.698667 10.752 22.186667 22.186667 0 0 1-30.208 8.192l-36.010666-20.821333a22.357333 22.357333 0 0 1-8.192-30.378667 20.821333 20.821333 0 0 0 2.389333-6.144l240.64-241.152a21.674667 21.674667 0 0 0 4.437333 18.773334 162.645333 162.645333 0 0 1 25.6 44.544 22.186667 22.186667 0 0 0 20.650667 14.336 22.186667 22.186667 0 0 1 22.186667 22.016z" fill="#62CCA1" p-id="2806"></path><path d="M782.165333 742.058667m-60.416 0a60.416 60.416 0 1 0 120.832 0 60.416 60.416 0 1 0-120.832 0Z" fill="#FCFEFF" p-id="2807"></path><path d="M159.232 268.629333m-17.066667 0a17.066667 17.066667 0 1 0 34.133334 0 17.066667 17.066667 0 1 0-34.133334 0Z" fill="#3D3D63" p-id="2808"></path><path d="M273.066667 268.629333m-17.066667 0a17.066667 17.066667 0 1 0 34.133333 0 17.066667 17.066667 0 1 0-34.133333 0Z" fill="#3D3D63" p-id="2809"></path><path d="M216.234667 268.629333m-17.066667 0a17.066667 17.066667 0 1 0 34.133333 0 17.066667 17.066667 0 1 0-34.133333 0Z" fill="#3D3D63" p-id="2810"></path><path d="M341.333333 516.266667l51.2-51.2a17.066667 17.066667 0 1 0-24.234666-24.234667l-63.488 63.658667a17.066667 17.066667 0 0 0 0 24.064l63.488 63.658666a17.066667 17.066667 0 0 0 24.234666 0 17.066667 17.066667 0 0 0 0-24.064zM585.728 591.872a17.066667 17.066667 0 0 0 24.064 0L673.450667 529.066667a17.066667 17.066667 0 0 0 0-24.064l-63.658667-63.658667a17.066667 17.066667 0 0 0-24.064 24.234667l51.2 51.2-51.2 51.2a17.066667 17.066667 0 0 0 0 23.893333zM529.066667 446.293333a17.066667 17.066667 0 0 0-23.381334 6.314667L442.709333 563.2a17.066667 17.066667 0 1 0 29.525334 17.066667l63.658666-110.08a17.066667 17.066667 0 0 0-6.826666-23.893334z" fill="#3D3D63" p-id="2811"></path><path d="M953.344 682.666667a4.949333 4.949333 0 0 1-4.608-3.242667 178.005333 178.005333 0 0 0-28.501333-49.322667 4.949333 4.949333 0 0 1 0-5.632 39.253333 39.253333 0 0 0-14.336-53.589333l-12.8-7.68V251.562667a51.2 51.2 0 0 0-51.2-51.2H136.533333a51.2 51.2 0 0 0-51.2 51.2v432.469333a39.936 39.936 0 0 0 39.765334 39.765333H358.4l-17.066667 63.146667h-22.698666a73.898667 73.898667 0 0 0-71.850667 56.832H204.8a17.066667 17.066667 0 0 0 0 34.133333h434.688a36.181333 36.181333 0 0 0 1.194667 12.117334 38.4 38.4 0 0 0 18.261333 23.893333l36.010667 20.821333a39.253333 39.253333 0 0 0 53.589333-14.506666 5.290667 5.290667 0 0 1 5.290667-2.389334 166.229333 166.229333 0 0 0 56.661333 0 5.12 5.12 0 0 1 5.290667 2.56 39.253333 39.253333 0 0 0 34.133333 19.456 38.741333 38.741333 0 0 0 19.626667-5.12l36.010666-20.821333a39.082667 39.082667 0 0 0 18.261334-23.893333 38.570667 38.570667 0 0 0-3.925334-29.696 5.12 5.12 0 0 1 0-5.802667 179.541333 179.541333 0 0 0 28.501334-49.152 4.778667 4.778667 0 0 1 4.608-3.242667 39.424 39.424 0 0 0 39.253333-39.253333v-41.642667A39.253333 39.253333 0 0 0 953.344 682.666667zM119.466667 251.562667a17.066667 17.066667 0 0 1 17.066666-17.066667h705.365334a17.066667 17.066667 0 0 1 17.066666 17.066667v51.2H119.466667z m5.632 438.101333a5.632 5.632 0 0 1-5.632-5.632V336.896h739.498666V546.133333a39.082667 39.082667 0 0 0-43.178666 17.066667 4.949333 4.949333 0 0 1-5.12 2.218667 175.274667 175.274667 0 0 0-56.661334 0 4.778667 4.778667 0 0 1-5.12-2.218667 39.082667 39.082667 0 0 0-53.589333-14.336l-36.010667 20.821333a38.229333 38.229333 0 0 0-18.261333 23.722667 39.594667 39.594667 0 0 0 3.754667 29.866667 4.608 4.608 0 0 1 0 5.632 178.005333 178.005333 0 0 0-28.501334 49.322666 4.949333 4.949333 0 0 1-4.608 3.242667 39.082667 39.082667 0 0 0-23.210666 7.68zM580.266667 786.944H375.466667l17.066666-63.146667h179.2v39.082667a39.594667 39.594667 0 0 0 8.533334 24.064z m-261.461334 34.133333h303.786667a187.733333 187.733333 0 0 0 13.312 22.698667H282.794667a39.765333 39.765333 0 0 1 35.84-22.698667z m639.658667-58.197333a5.12 5.12 0 0 1-5.12 5.12 39.424 39.424 0 0 0-36.693333 25.258667 144.384 144.384 0 0 1-22.869334 39.765333 39.424 39.424 0 0 0-3.584 44.373333 4.437333 4.437333 0 0 1 0 3.754667 4.949333 4.949333 0 0 1-2.389333 3.242667L852.309333 904.533333a5.12 5.12 0 0 1-6.997333-2.048 39.424 39.424 0 0 0-40.448-18.944 135.168 135.168 0 0 1-45.397333 0 39.424 39.424 0 0 0-40.448 19.114667 5.290667 5.290667 0 0 1-6.997334 1.877333l-36.010666-20.821333a4.949333 4.949333 0 0 1-2.389334-3.242667 4.437333 4.437333 0 0 1 0-3.754666 39.765333 39.765333 0 0 0-3.584-44.373334 142.506667 142.506667 0 0 1-23.04-39.765333A38.912 38.912 0 0 0 610.986667 768a5.12 5.12 0 0 1-5.12-5.12v-41.642667a4.949333 4.949333 0 0 1 5.12-5.12 39.253333 39.253333 0 0 0 36.522666-25.258666 140.117333 140.117333 0 0 1 23.04-39.765334 39.765333 39.765333 0 0 0 3.584-44.373333 4.778667 4.778667 0 0 1 0-3.925333 4.437333 4.437333 0 0 1 2.389334-3.072l36.010666-20.821334a4.778667 4.778667 0 0 1 2.56 0 5.12 5.12 0 0 1 4.266667 2.389334 39.594667 39.594667 0 0 0 40.448 19.114666 135.168 135.168 0 0 1 45.397333 0A39.765333 39.765333 0 0 0 845.312 580.266667a4.949333 4.949333 0 0 1 6.826667-1.706667l36.010666 20.821333a4.437333 4.437333 0 0 1 2.389334 3.072 4.778667 4.778667 0 0 1 0 3.925334 39.253333 39.253333 0 0 0 3.584 44.202666 145.237333 145.237333 0 0 1 22.869333 39.936A39.594667 39.594667 0 0 0 953.344 716.8a4.949333 4.949333 0 0 1 5.12 5.12z" fill="#3D3D63" p-id="2812"></path><path d="M782.165333 664.576a77.482667 77.482667 0 1 0 77.482667 77.482667 77.482667 77.482667 0 0 0-77.482667-77.482667z m0 120.832a43.349333 43.349333 0 1 1 43.349334-43.349333A43.349333 43.349333 0 0 1 782.165333 785.066667z" fill="#3D3D63" p-id="2813"></path></svg><span class="menu-item-name">技术</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/guitar/"><svg class="icon guitar" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M575.744 717.952c19.072-38.656 19.968-52.672 64.704-93.824a579.2 579.2 0 0 1 43.072-35.776c41.216-38.976 63.872-81.344 29.824-118.4l-119.04-129.408c-34.944-37.952-80.384-17.216-123.648 22.464l-13.312 9.152c-8.064 8.384-16.512 16.64-25.472 24.896-50.304 46.208-70.336 48.128-113.408 61.632l-2.048 1.408c-34.112 4.16-106.496 53.568-140.8 85.056-62.016 56.96-84.288 133.632-49.792 171.264 1.856 1.92 3.968 3.712 5.952 5.504l-0.448 0.384 178.624 194.432 1.024-0.896c37.824 27.008 108.736 9.664 165.888-42.816 41.984-38.592 98.816-116.8 98.88-155.072z" fill="#E88F22" /><path d="M859.648 166.528l56.768 61.824-416 382.272-56.768-61.76z" fill="#5B4037" /><path d="M515.904 538.112l-3.072 98.944-98.816-3.072 3.072-98.88z" fill="#3C2622" /><path d="M810.432 163.008l105.152 114.496-82.624 75.84-105.152-114.496z" fill="#5B4037" /><path d="M847.36 153.088l81.472 88.64-139.904 128.64L707.456 281.6z" fill="#B5612C" /><path d="M385.152 740.928l-81.472-88.64 25.152-46.976 105.152 114.496z" fill="#5B4037" /><path d="M844.864 200.64l14.4 15.616-27.072 24.768-14.336-15.616zM789.312 251.648l14.4 15.616-27.072 24.896-14.336-15.68zM866.56 224.256l14.464 15.616-27.008 24.96-14.4-15.616zM811.072 275.328l14.4 15.616-27.008 24.96-14.464-15.616z" fill="#E1C2AD" /></svg><span class="menu-item-name">指弹</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/harmonica/"><svg class="icon harmonica" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M965.312 620.288a20.096 20.096 0 0 1-20.16 20.16H89.6a20.096 20.096 0 0 1-20.16-20.16V411.328c0-11.136 9.024-20.096 20.16-20.096h855.488c11.2 0 20.16 9.024 20.16 20.096v208.96z" fill="#358BCB" /><path d="M155.008 344h724.672v328.448H155.008z" fill="#4EAEE3" /><path d="M965.312 634.624c0 3.2-9.024 5.888-20.16 5.888H89.6c-11.2 0-20.16-2.688-20.16-5.888v-60.608c0-3.2 9.024-5.888 20.16-5.888h855.488c11.2 0 20.16 2.688 20.16 5.888v60.608z" fill="#F5BB1B" /><path d="M140.8 588.288h32.576v32.576H140.8zM206.464 588.288h32.64v32.576h-32.64zM272.128 588.288h32.704v32.576h-32.704zM337.856 588.288h32.576v32.576h-32.576zM666.304 588.288h32.704v32.576h-32.704zM732.032 588.288h32.64v32.576h-32.64zM797.76 588.288h32.576v32.576h-32.576zM863.36 588.288H896v32.576h-32.64zM403.584 588.288h32.576v32.576h-32.576zM469.248 588.288h32.64v32.576h-32.64zM534.848 588.288h32.704v32.576h-32.704zM600.64 588.288h32.576v32.576h-32.576z" fill="#775548" /></svg><span class="menu-item-name">口琴</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/life/"><svg t="1637754482809" class="icon life" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2456" width="200" height="200"><path d="M933.4 701.1V509.7c0-93.8-65.3-173.1-152.7-194.7-3.1-0.8-9.4-2.1-9.4-2.1l0.3 173.4c0 9.2-8.4 15.7-17.5 14.1-11.9-2.1-24-3.3-36.5-3.3H550.1V464c0-12.4 4.9-24.6 14.1-32.9 44-39.9 71.2-98.1 69.2-162.6-3.3-110-95.1-201.5-205-204.5-119.4-3.3-217.1 92.4-217.1 211 0 3 0.4 6 0.5 9h-0.5v112.5h38.8c5.8 8.1 12.1 15.9 18.9 23.2 7.6 8.1 11.4 19.1 11.4 30.2V501C162.7 522.2 75.2 633 92.1 759.7c15.5 115.9 119.1 199.9 236 199.9h389.5c18.9 0 37.4-1.9 54.7-7.3 20.5-6.5 55.3-20.5 77-37.9 7.6-5.9 14.9-12.1 21.6-18.9 1.8-1.7 3.8-3.4 5.6-5.1 36.2-35.4 56.8-83.7 56.8-134.3v-0.4c0.2-4.2 0.6-8.3 0.6-12.5v-29.5c0.1-4.3-0.3-8.4-0.5-12.6z" fill="#FFD778" p-id="2457"></path><path d="M440.1 251.5m-46.3 0a46.3 46.3 0 1 0 92.6 0 46.3 46.3 0 1 0-92.6 0Z" fill="#FB813A" p-id="2458"></path><path d="M272.6 348.5l-122.6-0.3c-22 0-40.1 18-40.1 40s18 40.1 40 40.1l122.5 0.3c22 0 40.1-18 40.1-40 0.1-22-17.9-40-39.9-40.1z" fill="#FB813A" p-id="2459"></path></svg><span class="menu-item-name">生活</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg class="icon theme-icon-light" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M511.925344 256.111984c-141.398046 0-255.962672 114.564626-255.962672 255.962672s114.564626 255.962672 255.962672 255.962672 255.962672-114.564626 255.962672-255.962672-114.564626-255.962672-255.962672-255.962672z" fill="#FFBB00" /><path d="M511.925344 239.602391c150.228758 0 272.472264 122.222176 272.450934 272.472265 0 150.228758-122.222176 272.472264-272.450934 272.472264-150.228758 0-272.472264-122.222176-272.472264-272.472264 0-150.228758 122.222176-272.472264 272.472264-272.472265z m0 478.92749c113.839398 0 206.476556-92.615827 206.476556-206.455225 0-113.839398-92.637157-206.476556-206.476556-206.476556s-206.476556 92.637157-206.476555 206.476556 92.637157 206.476556 206.476555 206.476555z m0-521.758577a32.997854 32.997854 0 0 1-32.997854-32.997854V33.147166a32.997854 32.997854 0 1 1 65.995709 0v130.626284c0 18.21601-14.781844 32.997854-32.997855 32.997854z m0 630.606703c18.21601 0 32.997854 14.781844 32.997855 33.019185v130.604954a32.997854 32.997854 0 0 1-65.995709 0V860.397192c0-18.23734 14.760514-33.019185 32.997854-33.019185z m478.92749-348.322536a32.997854 32.997854 0 0 1 0 66.017039h-130.626284a32.997854 32.997854 0 0 1 0-65.995709h130.626284zM196.621993 512.074656c0 18.23734-14.781844 32.997854-32.997855 32.997854H32.997854a32.997854 32.997854 0 0 1 0-65.995709h130.626284c18.21601 0 32.997854 14.781844 32.997855 32.997855zM759.142625 297.833899a32.997854 32.997854 0 0 1-23.335264-56.333118l92.359865-92.359864a32.997854 32.997854 0 1 1 46.670527 46.670527l-92.359864 92.359864a32.912534 32.912534 0 0 1-23.335264 9.662591zM243.249859 734.079613a32.997854 32.997854 0 1 1 46.670528 46.670528l-92.359865 92.359864a32.891203 32.891203 0 0 1-23.335263 9.662591 32.997854 32.997854 0 0 1-23.335264-56.333118l92.359864-92.359865z m539.24936 0l92.359864 92.359865a32.997854 32.997854 0 0 1-46.670527 46.670527l-92.359864-92.359864a32.997854 32.997854 0 1 1 46.670527-46.670528zM243.249859 288.171308l-92.359864-92.359864a32.997854 32.997854 0 1 1 46.670527-46.670527l92.359865 92.359864a32.997854 32.997854 0 1 1-46.670528 46.670527z" fill="#000000" /></svg><svg class="icon theme-icon-dark" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M737.373 740.060c0.143 0 0.311 0 0.481 0 79.247 0 152.484-25.733 211.81-69.299-62.252 174.042-227.511 298.298-421.842 298.298-246.432 0-446.229-199.797-446.229-446.229s199.797-446.229 446.229-446.229c5.434 0 10.863 0.137 16.263 0.333-100.084 63.876-166.439 175.899-166.439 303.405 0 198.656 161.071 359.722 359.727 359.722z" fill="#FFB578" /><path d="M527.817 990.905c-258.097 0-468.075-209.978-468.075-468.075s209.978-468.075 468.075-468.075c5.707 0 11.409 0.137 17.077 0.35 11.712 0.444 21.039 10.045 21.039 21.825 0 7.706-3.991 14.48-10.019 18.367-97.975 62.535-156.422 169.070-156.422 285.041 0 186.308 151.573 337.882 337.882 337.882 71.817 0 140.444-22.276 198.454-64.433 3.553-2.606 8.013-4.17 12.836-4.17 12.065 0 21.845 9.78 21.845 21.845 0 2.608-0.458 5.11-1.296 7.429-65.931 186.565-243.337 312.012-441.397 312.012zM476.802 101.499c-210.032 25.286-373.364 204.598-373.364 421.331 0 234.007 190.377 424.384 424.384 424.384 157.041 0 299.756-86.982 373.113-222.031-50.752 24.166-106.261 36.727-163.562 36.727-210.398 0-381.572-171.174-381.572-381.572 0-107.255 44.258-207.361 121.002-278.839z" fill="#4F46A3" /><path d="M795.673 572.741h-176.019c-12.062-0.007-21.838-9.788-21.838-21.851 0-7.585 3.865-14.268 9.732-18.186l115.297-76.006h-103.198c-12.065 0-21.845-9.78-21.845-21.845s9.78-21.845 21.845-21.845h176.019c12.062 0.007 21.838 9.788 21.838 21.851 0 7.585-3.865 14.268-9.732 18.186l-115.297 76.006h103.198c12.065 0 21.845 9.78 21.845 21.845s-9.78 21.845-21.845 21.845zM895.321 338.041h-108.031c-12.062-0.007-21.838-9.788-21.838-21.851 0-7.585 3.865-14.268 9.732-18.186l47.303-31.18h-35.198c-12.065 0-21.845-9.78-21.845-21.845s9.78-21.845 21.845-21.845h108.031c12.062 0.007 21.838 9.788 21.838 21.851 0 7.585-3.865 14.268-9.732 18.186l-47.303 31.18h35.198c12.065 0 21.845 9.78 21.845 21.845s-9.78 21.845-21.845 21.845zM937.23 131.34h-91.264c-12.062-0.007-21.838-9.788-21.838-21.851 0-7.585 3.865-14.268 9.732-18.186l30.521-20.115h-18.421c-12.065 0-21.845-9.78-21.845-21.845 0-12.065 9.78-21.845 21.845-21.845h91.264c12.062 0.007 21.838 9.788 21.838 21.851 0 7.585-3.865 14.268-9.732 18.186l-30.521 20.115h18.421c12.065 0 21.845 9.78 21.845 21.845s-9.78 21.845-21.845 21.845z" fill="#4F46A3" /></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="technology" data-toc-num="true">
+
+            <h1 class="post-title p-name">LeetCode刷题——两数之和</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2021-11-25T19:20:03&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2021.11.25</time>
+    
+    
+        
+        <time datetime="2021-11-25T19:20:44&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2021.11.25</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;681</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;2&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+            
+
+            <div class="post-body e-content">
+                <p>给定一个整数数组<code>nums</code>和一个整数目标值<code>target</code>，请你在该数组中找出 和为目标值<code>target</code>的那两个整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p>示例 1：</p>
+<pre tabindex="0"><code>输入：nums = [2,7,11,15], target = 9
+输出：[0,1]
+解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+</code></pre><p>示例 2：</p>
+<pre tabindex="0"><code>输入：nums = [3,2,4], target = 6
+输出：[1,2]
+</code></pre><p>示例 3：</p>
+<pre tabindex="0"><code>输入：nums = [3,3], target = 6
+输出：[0,1]
+</code></pre><p>提示：</p>
+<pre tabindex="0"><code>2 &lt;= nums.length &lt;= 10^4
+-10^9 &lt;= nums[i] &lt;= 10^9
+-10^9 &lt;= target &lt;= 10^9
+只会存在一个有效答案
+</code></pre><p>我的思路：暴力破解</p>
+<p>实现代码：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">index</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">index</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                    <span class="n">index</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
+                    <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>官方解法1：暴力破解</p>
+<p>思路：当我们使用遍历整个数组的方式寻找<code>target - x</code>时，需要注意到每一个位于<code>x</code>之前的元素都已经和<code>x</code>匹配过，因此不需要再进行匹配。而每一个元素不能被使用两次，所以我们只需要在<code>x</code>后面的元素中寻找<code>target - x</code>。</p>
+<p>实现代码：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">};</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{};</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>官方解法2：哈希表</p>
+<p>思路：使用哈希表，快速寻找数组中是否存在目标元素（<code>target - x</code>）的索引。</p>
+<p>创建一个哈希表，对于每一个<code>x</code>，我们首先查询哈希表中是否存在<code>target - x</code>，然后将<code>x</code>插入到哈希表中，即可保证不会让<code>x</code>和自己匹配。</p>
+<p>实现代码：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">hashtable</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">hashtable</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">hashtable</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="p">{</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">,</span> <span class="n">i</span><span class="p">};</span>
+            <span class="p">}</span>
+            <span class="n">hashtable</span><span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{};</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table></div>
+</div>
+</div>
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://arthur940621.github.io/" class="p-author h-card" target="_blank" rel="noopener">arthur</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" target="_blank" rel="noopener">https://Arthur940621.github.io/technology/leetcode刷题两数之和/</a></li>
+            
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-11-25 19:20:44 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-11-25</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-11-25</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        <div class="post-share">
+
+        
+
+        <div class="share-items">
+
+            
+                <div class="share-item twitter">
+                    
+                    <a href="https://twitter.com/share?url=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;text=LeetCode%e5%88%b7%e9%a2%98%e2%80%94%e2%80%94%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c&amp;hashtags=&amp;via=%25!s%28%3cnil%3e%29" title="分享到「Twitter」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon twitter-icon"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item facebook">
+                    
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;hashtag=%23" title="分享到「Facebook」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon facebook-icon"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item linkedin">
+                    
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;title=LeetCode%e5%88%b7%e9%a2%98%e2%80%94%e2%80%94%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c&amp;summary=%e2%80%a6%e2%80%a6&amp;source=%e9%98%bf%e9%a3%92%e7%9a%84%e4%bb%93%e5%ba%93" title="分享到「LinkedIn」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon linkedin-icon"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item telegram">
+                    
+                    <a href="https://t.me/share/url?url=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;text=LeetCode%e5%88%b7%e9%a2%98%e2%80%94%e2%80%94%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c" title="分享到「Telegram」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon telegram-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item weibo">
+                    
+                    <a href="https://service.weibo.com/share/share.php?&amp;url=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;title=LeetCode%e5%88%b7%e9%a2%98%e2%80%94%e2%80%94%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c&amp;pic=https://Arthur940621.github.io/icons/apple-touch-icon.png&amp;searchPic=false" title="分享到「新浪微博」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon weibo-icon"><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item douban">
+                    
+                    <a href="https://www.douban.com/share/service?href=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;name=LeetCode%e5%88%b7%e9%a2%98%e2%80%94%e2%80%94%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c&amp;text=%e2%80%a6%e2%80%a6" title="分享到「豆瓣」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon douban-icon"><path d="M.643.92v2.412h22.714V.92H.643zm1.974 4.926v9.42h18.764v-9.42H2.617zm2.72 2.408H18.69v4.605H5.338V8.254zm1.657 7.412l-2.512.938c1.037 1.461 1.87 2.825 2.512 4.091H0v2.385h24v-2.385h-6.678c.818-1.176 1.589-2.543 2.303-4.091l-2.73-.938a29.952 29.952 0 01-2.479 5.03h-4.75c-.786-1.962-1.677-3.641-2.672-5.03Z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item qq">
+                    
+                    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;title=LeetCode%e5%88%b7%e9%a2%98%e2%80%94%e2%80%94%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c&amp;summary=%e2%80%a6%e2%80%a6&amp;pics=https://Arthur940621.github.io/icons/apple-touch-icon.png&amp;site=%e9%98%bf%e9%a3%92%e7%9a%84%e4%bb%93%e5%ba%93" title="分享到「QQ」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item qzone">
+                    
+                    <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://Arthur940621.github.io/technology/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/&amp;title=LeetCode%e5%88%b7%e9%a2%98%e2%80%94%e2%80%94%e4%b8%a4%e6%95%b0%e4%b9%8b%e5%92%8c&amp;summary=%e2%80%a6%e2%80%a6&amp;pics=https://Arthur940621.github.io/icons/apple-touch-icon.png&amp;site=%e9%98%bf%e9%a3%92%e7%9a%84%e4%bb%93%e5%ba%93" title="分享到「QQ 空间」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon qzone-icon"><path d="M23.985 9.202c-.032-.099-.127-.223-.334-.258-.207-.036-7.351-1.406-7.351-1.406s-.105-.022-.198-.07c-.092-.047-.127-.167-.127-.167S12.447.956 12.349.77C12.25.583 12.104.532 12 .532c-.104 0-.251.051-.349.238-.098.186-3.626 6.531-3.626 6.531s-.035.12-.128.167c-.092.047-.197.07-.197.07S.556 8.908.348 8.943c-.208.036-.302.16-.333.258a.477.477 0 0 0 .125.449l5.362 5.49s.072.08.119.172c.016.104.005.21.005.21s-1.189 7.242-1.22 7.45.075.369.159.43c.083.062.233.106.421.013.189-.093 6.812-3.261 6.812-3.261s.098-.044.201-.061c.103-.017.201.061.201.061s6.623 3.168 6.812 3.261c.188.094.338.049.421-.013a.463.463 0 0 0 .159-.43c-.021-.14-.93-5.677-.93-5.677.876-.54 1.425-1.039 1.849-1.747-2.594.969-6.006 1.717-9.415 1.866-.915.041-2.41.097-3.473-.015-.678-.071-1.17-.144-1.243-.438-.053-.215.054-.46.545-.831a2640.5 2640.5 0 0 1 2.861-2.155c1.285-.968 3.559-2.47 3.559-2.731 0-.285-2.144-.781-4.037-.781-1.945 0-2.275.132-2.811.168-.488.034-.769.005-.804-.138-.06-.248.183-.389.588-.568.709-.314 1.86-.594 1.984-.626.194-.052 3.082-.805 5.618-.535 1.318.14 3.244.668 3.244 1.276 0 .342-1.721 1.494-3.225 2.597-1.149.843-2.217 1.561-2.217 1.688 0 .342 3.533 1.241 6.689 1.01l.003-.022c.048-.092.119-.172.119-.172l5.362-5.49a.477.477 0 0 0 .127-.449z"/></svg></a>
+                </div>
+            
+
+            
+                <div class="share-item qrcode">
+                    <div class="qrcode-container" title="通过「二维码」"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qrcode-icon"><path d="M0 224h192V32H0v192zM64 96h64v64H64V96zm192-64v192h192V32H256zm128 128h-64V96h64v64zM0 480h192V288H0v192zm64-128h64v64H64v-64zm352-64h32v128h-96v-32h-32v96h-64V288h96v32h64v-32zm0 160h32v32h-32v-32zm-64 0h32v32h-32v-32z"/></svg><div id="qrcode-img"></div>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+
+<script>
+    var typeNumber = 0;
+    var errorCorrectionLevel = 'L';
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData('https:\/\/Arthur940621.github.io\/technology\/leetcode%E5%88%B7%E9%A2%98%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C\/');
+    qr.make();
+    document.getElementById('qrcode-img').innerHTML = qr.createImgTag();
+</script>
+
+                </div>
+            
+
+        </div>
+
+    </div>
+
+
+
+
+        
+    
+    
+
+
+
+        
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/technology/cplusplusprimer%E5%BC%80%E5%A7%8B/" rel="next">CPlusPlusPrimer——开始 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;arthur</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"></div>
+                <div class="busuanzi-site-uv-and-pv">
+                    <span id="busuanzi_container_site_uv">本站访客数&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon busuanzi-site-uv"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg>&nbsp;<span id="busuanzi_value_site_uv"></span></span>&nbsp;|&nbsp;<span id="busuanzi_container_site_pv">本站访问量&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon busuanzi-site-pv"><path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"/></svg>&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                </div>
+
+            
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+    
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+
+
+    </body>
+</html>
