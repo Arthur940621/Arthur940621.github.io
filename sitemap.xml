@@ -2,13 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Arthur940621.github.io/technology/mobilenet/</loc>
-    <lastmod>2021-12-20T16:04:03+08:00</lastmod>
+    <loc>https://Arthur940621.github.io/technology/myjson/</loc>
+    <lastmod>2021-12-30T18:40:52+08:00</lastmod>
   </url><url>
     <loc>https://Arthur940621.github.io/technology/</loc>
-    <lastmod>2021-12-20T16:04:03+08:00</lastmod>
+    <lastmod>2021-12-30T18:40:52+08:00</lastmod>
   </url><url>
     <loc>https://Arthur940621.github.io/</loc>
+    <lastmod>2021-12-30T18:40:52+08:00</lastmod>
+  </url><url>
+    <loc>https://Arthur940621.github.io/technology/linux%E4%B8%8Bc&#43;&#43;%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-12-22T20:29:06+08:00</lastmod>
+  </url><url>
+    <loc>https://Arthur940621.github.io/technology/%E7%BA%A2%E9%BB%91%E6%A0%91/</loc>
+    <lastmod>2021-12-20T21:59:44+08:00</lastmod>
+  </url><url>
+    <loc>https://Arthur940621.github.io/technology/json%E8%A7%A3%E6%9E%90%E5%99%A8/</loc>
+    <lastmod>2021-12-20T16:22:50+08:00</lastmod>
+  </url><url>
+    <loc>https://Arthur940621.github.io/technology/mobilenet/</loc>
     <lastmod>2021-12-20T16:04:03+08:00</lastmod>
   </url><url>
     <loc>https://Arthur940621.github.io/technology/few-shot_image_generation_via_cross-domain_correspondence/</loc>
